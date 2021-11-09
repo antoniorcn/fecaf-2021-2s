@@ -39,8 +39,8 @@ export default function App() {
           height: win.height / 3,
           flex: 1,
           justifyContent: "center",
-          alignItems: "center"
-
+          alignItems: "stretch",
+          padding: 20,
         }}
         source={petImage}>
 
@@ -50,8 +50,9 @@ export default function App() {
             textShadowColor: "black",
             textShadowOffset: {width: 2, height: 2},
             textShadowRadius: 15,
-            backgroundColor: "black",
-          }}>Pets</Text>
+            backgroundColor: "rgba(150, 150, 150, 0.6)",
+            textAlign: "center"
+          }}>P E T S</Text>
 
         </ImageBackground>
       </View>
@@ -60,8 +61,10 @@ export default function App() {
         flex: 2
       }}>
         
+        {/* teste comentario */ }
+
         <PetView nome="Mike" raca="Viralata" 
-                  peso="11,4" nascimento="25/01/2014"/>
+                  peso="11,4" nascimento="25/01/2014"/> 
         <PetView nome="Princesa" raca="Poodle" 
                   peso="7,3" nascimento="10/06/2018"/>
         <PetView nome="Rex" raca="Pastor Alemão" 
