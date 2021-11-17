@@ -19,10 +19,10 @@ public class Teste {
 
         Aluno mario = new Aluno();
         mario.nome = "Mario Silva";
-        mario.estudar();
-        mario.dormir();
-        mario.comer();
-        mario.estudar();
+        // mario.estudar();
+        // mario.dormir();
+        // mario.comer();
+        // mario.estudar();
         mario.id = 0;
 
     }

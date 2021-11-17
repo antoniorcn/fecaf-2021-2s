@@ -1,5 +1,7 @@
 package edu.curso;
 
+import java.util.Scanner;
+
 public class RegistroAlunos {
 
     public static void main(String[] args) {
@@ -8,14 +10,33 @@ public class RegistroAlunos {
         //  |  a  | null | null | null | null |
         //
 
-        Aluno a = new Aluno();
-        a.id = 1;
-        a.nome = "João Silva";
-        a.ra = "00001";
-        alunos[0] = a;
+        Scanner scan = new Scanner(System.in);
+        int indice = 0;
+        boolean cadastrar = true;
+        while (cadastrar == true) { 
 
+            Aluno a = new Aluno();
         
-        
+            System.out.println("Digite o nome do aluno: ");
+            a.nome = scan.nextLine();
+            System.out.println("Digite o RA do aluno: ");
+            a.ra = scan.nextLine();
+            System.out.println("Digite o id do aluno: ");
+            a.id = scan.nextLong();
+            
+            alunos[indice] = a;
+            indice = indice + 1;
+            scan.nextLine();
+            System.out.println("Deseja cadastrar mais um aluno (S/N)");
+            String resposta = scan.nextLine();
+            if (resposta.equals("S")) { 
+                cadastrar = true;
+            } else {
+                cadastrar = false;
+            }
+        }
+        scan.close();
+        System.out.println("Fim do programa");
     }
     
     

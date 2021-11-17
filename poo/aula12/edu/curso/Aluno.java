@@ -1,11 +1,11 @@
 package edu.curso;
 
-public class Aluno extends Pessoa {
+public class Aluno {
 
     String ra;
+    long id;
+    String nome;
     
-    public void estudar() { 
-        System.out.println("Estudando....");
-    }
+
     
 }
