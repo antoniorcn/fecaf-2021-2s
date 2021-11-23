@@ -1,7 +1,16 @@
 import React, {useState} from 'react';
-import {Button, Text, TextInput, ToastAndroid, View} from 'react-native';
+import {Button, ScrollView, Text, TextInput, ToastAndroid, View} from 'react-native';
 
 // let raca = "Viralata";
+
+const Pet = (props) => {
+  return (
+    <View style={{marginTop: 10, backgroundColor: "cyan"}}>
+      <Text>{props.nome}</Text>
+      <Text>{props.raca}</Text>
+    </View>
+  )
+}
 
 export default () => {
   let [nome, setNome] = useState("Toto");
@@ -15,10 +24,7 @@ export default () => {
   for (let i = 0; i < lista.length; i++) {
     const pet = lista[i];
     listaViews.push(
-      <View style={{marginTop: 10, backgroundColor: "cyan"}}>
-        <Text>Nome: {pet.nome}</Text>
-        <Text>{pet.raca}</Text>
-      </View>
+      <Pet nome={pet.nome} raca={pet.raca}/>
     );
   }
 
@@ -47,6 +53,8 @@ export default () => {
           lista.push( {nome, raca} );
           const listaTemp = [...lista];
           setLista(listaTemp);
+          setNome("");
+          setRaca("");
           // lista.push( {nome: nome, raca: raca} );
           ToastAndroid.show(`Pet ${nome} foi gravado com sucesso`, 
             ToastAndroid.LONG);
@@ -60,7 +68,9 @@ export default () => {
         padding: 10,
       }}>
         <Text>Lista de Pets</Text>
-        {listaViews}
+        <ScrollView>
+          {listaViews}
+        </ScrollView>
       </View>
     </View>
   );
