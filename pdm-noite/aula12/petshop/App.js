@@ -6,24 +6,17 @@ import {Button, Text, TextInput, ToastAndroid, View} from 'react-native';
 export default () => {
   let [nome, setNome] = useState("Toto");
   let [raca, setRaca] = useState("ViraLata");
-
-  const lista = [
-    {nome: "Toto", raca: "Viralata"},
-    {nome: "Fifi", raca: "Poodle"},
-    {nome: "Rex", raca: "Pastor Alemão"},
-    {nome: "Donzela", raca: "Lhasa Apso"},
-  ];
+  const [lista, setLista] = useState([]);
 
   const listaViews = [
 
   ];
 
-
   for (let i = 0; i < lista.length; i++) {
     const pet = lista[i];
     listaViews.push(
-      <View>
-        <Text>{pet.nome}</Text>
+      <View style={{marginTop: 10, backgroundColor: "cyan"}}>
+        <Text>Nome: {pet.nome}</Text>
         <Text>{pet.raca}</Text>
       </View>
     );
@@ -51,10 +44,13 @@ export default () => {
         }}/>
 
         <Button title="Gravar" onPress = { (e) => { 
-          setNome("Fifi");
-          setRaca("Poodle");
+          lista.push( {nome, raca} );
+          const listaTemp = [...lista];
+          setLista(listaTemp);
+          // lista.push( {nome: nome, raca: raca} );
           ToastAndroid.show(`Pet ${nome} foi gravado com sucesso`, 
             ToastAndroid.LONG);
+          console.log(lista);
         }}/>
       </View>
 
