@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.curso.petshop.MainActivity">
+    <item
+        android:id="@+id/action_ola_mundo"
+        android:orderInCategory="100"
+        android:title="@string/ola_mundo_1"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_acionar_formulario"
+        android:orderInCategory="100"
+        android:title="@string/acioonar_formulario"
+        app:showAsAction="never" />
+</menu>
